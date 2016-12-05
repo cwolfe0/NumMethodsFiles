@@ -1,3 +1,3 @@
-function r = res2(za) 
-[n,f] = ode45(@Blasius, [0 6], [0 0 za]); 
-r = f(end,2)-1; 
+function r = res2(za,t0) 
+[x,y] = ode45(@dydxn,[0,5],[t0 za]);
+r = y(length(x),1)-400;
